@@ -1,0 +1,149 @@
+%
+% NOTE -- ONLY EDIT THE .Rnw FILE!!!  The .tex file is
+% likely to be overwritten.
+%
+
+
+%\VignetteIndexEntry{Feature seLection by computing statistical scores}
+%\VignetteDepends{FeaLect}
+%\VignetteKeywords{}
+%\VignettePackage{FeaLect}
+\documentclass[12pt]{article}
+
+\usepackage{amsmath}
+\usepackage{cite, hyperref}
+
+\newcommand{\Rfunction}[1]{{\texttt{#1}}}
+\newcommand{\Robject}[1]{{\texttt{#1}}}
+\newcommand{\Rpackage}[1]{{\textit{#1}}}
+
+\author{Habil Zare}
+
+\begin{document}
+\title{\textbf{FeaLect}: \textbf{Fea}ture se\textbf{Lect}ion \\by computing statistical scores}
+\maketitle{}
+
+\tableofcontents
+
+
+\begin{abstract} 
+FeaLect is a feature selection method by statistically scoring the features.
+Several random subsets are sampled from the input data and for each random subset, various linear models are fitted using lars method. 
+For each feature, a score is calculated based on the tendency of LASSO in including that feature in the models.
+\end{abstract}
+
+\newpage
+\section{Introduction} 
+To build a robust classifier, the number of training instances is
+usually required to be more than the number of features.
+In many real life applications such as bioinformatics, natural language processing,
+and computer vision, many features might be provided to the learning algorithm
+without any prior knowledge on which ones should be used.
+ Therefore,  the number of features can drastically
+ exceed the number of training instances.
+%We need to explain why this situation happens.
+ Many regularization methods have been developed to prevent
+ overfitting and improve the generalization error bound of
+ the predictor in this learning situation.
+%high variance of the predictor's performance
+ Most notably, Lasso is an $\ell_1$-regularization technique
+ for linear regression which has attracted much attention in
+ machine learning and statistics. 
+% Lasso is interesting for both machine learning and also statistics community.
+Although efficient algorithms
+ exist for recovering the whole regularization path \cite{efron2004} for
+the  Lasso, finding a subset of highly relevant features
+ which leads to a robust predictor is an important research question.
+ %the best value for the regularization parameter
+
+
+
+A well-known justification of $\ell_1$-regularization is that it
+leads to {\it sparse} solutions, \emph{i.e.} those with many zeros, and
+thus performs model selection. Recent research \cite{wainright2006,
+zhaoandyu2006, bach2008, bach2009} have studied model {\it
+consistency} of the Lasso (\emph{i.e.}, if we know the true sparsity pattern
+of the underlying data-generation process, does the Lasso recover
+this sparsity pattern when the number of training instances
+increases?) Analysis in \cite{zhaoandyu2006, bach2008, bach2009} show
+that for various decaying schemes of the regularization parameter,
+Lasso selects the \emph{relevant} features with probability one and \emph{irrelevant}
+features with positive probability as the number of training instances goes to infinity.
+If several samples are available
+from the underlying data distribution, irrelevant features can be
+removed by simply interesting the set of selected features for each
+sample. The idea in \cite{bach 2008} is to provide such datasets by
+re-sampling with replacement from the given training dataset using
+the \emph{bootstrap} method \cite{efron tibshirani 1998}. 
+
+
+
+% In many published papers, the introduction ends up with a brief description of the method.
+FeaLect\cite {overfitting} proposes an alternative algorithm for feature selection based
+on the Lasso for building a robust predictor. The hypothesis is that
+defining a scoring scheme that measures the ``quality" of each
+feature can provide a more robust selection of features.
+FeaLect approach is to generate several samples from the training data,
+determine the best relevance-ordering of the features for each
+sample, and finally combine these relevance-orderings to select
+highly relevant features. 
+
+\section{How to use FeaLect?}
+FeaLect is an R package source that can be downloaded from The Comprehensive R Archive Network (CRAN). 
+In Linux, it can be installed by the following command:
+\newline
+$\\$
+\texttt{R CMD INSTALL FeaLect\_x.y.z.tar.gz}
+\newline
+$\\$
+where x.y.z. determines the version.
+
+The main function of this package is FeaLect() which is loaded by using the command library(FeaLect) in R. 
+
+\subsection{An example}
+
+This example shows how FeaLect can be run to assign scores to features. Here, $F$ is a feature matrix; each column is a feature and 
+each row represents a sample. $L$ is the label vector that contains 1 and 0 for positive and negative samples. We assume $L$ is 
+ordered according to the rows of $F$. 
+
+<<FeaLect_example,fig=FALSE, echo=TRUE>>=
+	library(FeaLect)
+	data(mcl_sll)
+	F <- as.matrix(mcl_sll[ ,-1])	# The Feature matrix
+	L <- as.numeric(mcl_sll[ ,1])	# The labels
+	names(L) <- rownames(F)
+	message(dim(F)[1], " samples and ",dim(F)[2], " features.")
+
+	FeaLect.result <-FeaLect(F=F,L=L,maximum.features.num=10,total.num.of.models=100,talk=TRUE)	
+@
+
+The scores are returned in $log.score$ element of the output:
+
+<<FeaLect_example,fig=TRUE, echo=TRUE>>=
+	plot(FeaLect.result$log.scores, pch=19)
+@
+
+
+
+Besides the scores, FeaLect() function computes some other values as well.
+For instance, the features selected by Bolasso method are also returned as a biproduct without increasing computational cost. 
+Moreover, the package includes some other functions.  The input structures and output values are detailed in the package manual. 
+
+\bibliographystyle{plain}
+\bibliography{overfitting} %your .bib file
+
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
