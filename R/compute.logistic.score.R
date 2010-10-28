@@ -8,7 +8,7 @@ function(F_,L_,considered.features,training.samples,validating.samples,linear.sc
 
 #plot(linear.scores); a()
 	feature.matrix <- F_[training.samples, considered.features]
-	library(Design)	#Needed for logistic regression to derive probablities from the scores computed by linear models.			
+	library(rms)	#Needed for logistic regression to derive probablities from the scores computed by linear models. Used to be package Design.		
 	lrm.result <- try(lrm(L_ ~ linear.scores),silent=!report.fitting.failure)
 	if(inherits(lrm.result, "try-error"))
 		stop("lrm() failed to fit a logistic regession model.")
