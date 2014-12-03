@@ -8,7 +8,8 @@
 	and the logistic scores are computed using the formula: 1/(1+exp(-(a+bX))) where a and b are the logistic coefficients.}
 
 \usage{
-compute.logistic.score(F_, L_, considered.features, training.samples, validating.samples, linear.scores, report.fitting.failure = TRUE)}
+compute.logistic.score(F_, L_, considered.features, training.samples, validating.samples,
+			   linear.scores, report.fitting.failure = TRUE)}
 
 \arguments{
   
@@ -66,7 +67,8 @@ L
 
 asymptotic.scores <- c(1,0.9,0.8,0.2,0.1,0.1,0.7,0.2)
 
-compute.logistic.score(F_=F, L_=L, training.samples=ts, validating.samples=vs, considered.features=colnames(F),linear.scores= asymptotic.scores)
+compute.logistic.score(F_=F, L_=L, training.samples=ts, validating.samples=vs, 
+			     considered.features=colnames(F),linear.scores= asymptotic.scores)
 
 }
 

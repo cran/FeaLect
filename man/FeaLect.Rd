@@ -13,7 +13,10 @@ Finally, the average score and the models are returned as the output.
 }
 
 \usage{
-FeaLect(F, L, maximum.features.num = dim(F)[2], total.num.of.models, gamma = 3/4, persistence = 1000, talk = FALSE, minimum.class.size = 2, report.fitting.failure = FALSE, return_linear.models = TRUE, balance = TRUE, replace = TRUE, plot.scores = TRUE)
+FeaLect(F, L, maximum.features.num = dim(F)[2], total.num.of.models, gamma = 3/4, 
+	   persistence = 1000, talk = FALSE, minimum.class.size = 2, 
+	   report.fitting.failure = FALSE, return_linear.models = TRUE, balance = TRUE,
+	   replace = TRUE, plot.scores = TRUE)
 }
 
 \arguments{
@@ -99,7 +102,8 @@ L <- as.numeric(mcl_sll[ ,1])	# The labels
 names(L) <- rownames(F)
 message(dim(F)[1], " samples and ",dim(F)[2], " features.")
 
-FeaLect.result <-FeaLect(F=F,L=L,maximum.features.num=10,total.num.of.models=100,talk=TRUE)	
+## For this data, total.num.of.models is suggested to be at least 100.
+FeaLect.result <-FeaLect(F=F,L=L,maximum.features.num=10,total.num.of.models=20,talk=TRUE)	
 
 }
 

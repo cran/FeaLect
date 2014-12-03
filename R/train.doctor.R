@@ -47,7 +47,6 @@ function(F_,L_,training.samples, validating.samples, considered.features, maximu
 	#message("compute.balanced()"); a()	# CHECK POINT for testing
 	
 	# LARC
-	library(lars)
 	lars.result <- try(lars(x=X_, y=Y_, trace=FALSE,use.Gram=FALSE),silent=!report.fitting.failure)
 		if(inherits(lars.result, "try-error"))
 			stop("Lars failed.")

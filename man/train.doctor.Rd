@@ -11,7 +11,9 @@
 	 A score is also assigned to each feature based on the tendency of LASSO in including that feature in the models.}
 
 \usage{
-train.doctor(F_, L_, training.samples, validating.samples, considered.features, maximum.features.num, balance = TRUE, return_linear.models = TRUE, report.fitting.failure = FALSE)
+train.doctor(F_, L_, training.samples, validating.samples, considered.features, 
+		 maximum.features.num, balance = TRUE, return_linear.models = TRUE, 
+		 report.fitting.failure = FALSE)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -87,7 +89,8 @@ message(dim(F)[1], " samples and ",dim(F)[2], " features.")
 
 all.samples <- rownames(F); ts <- all.samples[5:10]; vs <- all.samples[c(1,22)]
 
-doctor <- train.doctor(F_=F, L_=L, training.samples=ts, validating.samples=vs, considered.features=colnames(F), maximum.features.num=10)
+doctor <- train.doctor(F_=F, L_=L, training.samples=ts, validating.samples=vs,
+       considered.features=colnames(F), maximum.features.num=10)
 
 }
 
