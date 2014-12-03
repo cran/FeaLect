@@ -72,9 +72,9 @@ features with positive probability as the number of training instances goes to i
 If several samples are available
 from the underlying data distribution, irrelevant features can be
 removed by simply interesting the set of selected features for each
-sample. The idea in \cite{bach 2008} is to provide such datasets by
+sample. The idea in \cite{bach2008} is to provide such datasets by
 re-sampling with replacement from the given training dataset using
-the \emph{bootstrap} method \cite{efron tibshirani 1998}. 
+the \emph{bootstrap} method \cite{efrontibshirani1998}. 
 
 
 
