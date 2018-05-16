@@ -1,0 +1,22 @@
+## To check rendering of citation, run readCitationFile("CITATION")
+
+citHeader("To cite package 'FeaLect' in publications use:")
+     
+## R >= 2.8.0 passes package metadata to citation().
+if(!exists("meta") || is.null(meta)) meta <- packageDescription("nlme")
+year <- sub(".*(2[[:digit:]]{3})-.*", "\\1", meta$Date)
+vers <- paste("R package version", meta$Version)
+
+citEntry(entry="Article",
+        author = "Habil Zare and et al.",
+        title = "{Scoring relevancy of features based on combinatorial analysis of Lasso with application to lymphoma diagnosis}",
+        journal = "BMC  Genomics",
+        year = "2013",
+        volume = "14",
+        number = "1",
+        pages = "S14",
+        month = "1",
+
+        textVersion = paste("Habil Zare et al.", "(2013) ",  
+        "Scoring relevancy of features based on combinatorial analysis of Lasso with application to lymphoma diagnosis. ", 
+        "URL: https://bmcgenomics.biomedcentral.com/articles/10.1186/1471-2164-14-S1-S14", ".", sep=""))

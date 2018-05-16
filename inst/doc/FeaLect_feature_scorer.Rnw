@@ -79,7 +79,7 @@ the \emph{bootstrap} method \cite{efrontibshirani1998}.
 
 
 % In many published papers, the introduction ends up with a brief description of the method.
-FeaLect\cite {overfitting} proposes an alternative algorithm for feature selection based
+FeaLect \cite {zare2013scoring} proposes an alternative algorithm for feature selection based
 on the Lasso for building a robust predictor. The hypothesis is that
 defining a scoring scheme that measures the ``quality" of each
 feature can provide a more robust selection of features.
@@ -114,7 +114,8 @@ ordered according to the rows of $F$.
 	names(L) <- rownames(F)
 	message(dim(F)[1], " samples and ",dim(F)[2], " features.")
 
-	FeaLect.result <-FeaLect(F=F,L=L,maximum.features.num=10,total.num.of.models=100,talk=TRUE)	
+	FeaLect.result <-FeaLect(F=F,L=L,maximum.features.num=10, 
+                                 total.num.of.models=100, talk=TRUE)
 @
 
 The scores are returned in $log.score$ element of the output:

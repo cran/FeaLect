@@ -1,5 +1,5 @@
-208c6d055b51d2db64a3e5d2699efa4c *DESCRIPTION
-3ac48b01547aa13eae14f1e6f2225a22 *NAMESPACE
+8018995f7405c9871404de6b4eb6ac48 *DESCRIPTION
+41237fc5be52fe26030afcbde90ecee2 *NAMESPACE
 acb09a8bf536bb1ac190e17b9497de01 *R/FeaLect-internal.R
 2ad735a6a8d47853a2e614212d989c4d *R/FeaLect.R
 54c9c29d03082d389998e179c78de83e *R/compute.balanced.R
@@ -9,12 +9,14 @@ acb09a8bf536bb1ac190e17b9497de01 *R/FeaLect-internal.R
 583855d8e16ab6bc2947a4367cce29cb *R/input.check.FeaLect.R
 89e40e35c87910d3892a9ceb8814a2bc *R/random.subset.R
 be84e3b77aa8b4ea6ef5cd62ed236e98 *R/train.doctor.R
-fe32ee1a5c031828228a65c58ba3e17c *build/vignette.rds
+0cfae95916b7ae749dc756dfe8e633c7 *build/partial.rdb
+9b9816a485f5c97e52c50375d82425fa *build/vignette.rds
 f695147c5a2cde64717ef8f32dcaa58c *data/mcl_sll.rda
-b151595d0a7620c930014a00c13b51f1 *inst/doc/FeaLect_feature_scorer.R
-783048427ce659c991aa5af46d722d48 *inst/doc/FeaLect_feature_scorer.Rnw
-7cc96394ebe878c88a108f67d4928359 *inst/doc/FeaLect_feature_scorer.pdf
-7747f37dd47f55f281793ee1313ca564 *man/FeaLect-package.Rd
+b9d6aab640af3dc3e1f2311af3709026 *inst/CITATION
+4d438b4fe333f8cc0f559d21acd45ea3 *inst/doc/FeaLect_feature_scorer.R
+ed0091c267feb4b26475692a735fbad1 *inst/doc/FeaLect_feature_scorer.Rnw
+a04725a0f35370e5f330354e447948df *inst/doc/FeaLect_feature_scorer.pdf
+bb1cd568bd063108e0d8df5f67ff1fd6 *man/FeaLect-package.Rd
 4030b550635b9a171b4d2b28905725bc *man/FeaLect.Rd
 a34a036b83dc58f1facebe4439637053 *man/compute.balanced.Rd
 1c348052e80af0cc55359f07c977c210 *man/compute.logistic.score.Rd
@@ -24,5 +26,5 @@ dbc62176ae92656ef0f6b093762673bc *man/doctor.validate.Rd
 9d992392fd58a8dbebf6c62b93929535 *man/mcl_sll.Rd
 229563c1870d5f9a03e1dc9343f5f2cf *man/random.subset.Rd
 dd1144543ddf8eda2e6c71aae36156b5 *man/train.doctor.Rd
-783048427ce659c991aa5af46d722d48 *vignettes/FeaLect_feature_scorer.Rnw
-f5504b290e310ada5faa53cfd172f523 *vignettes/overfitting.bib
+ed0091c267feb4b26475692a735fbad1 *vignettes/FeaLect_feature_scorer.Rnw
+3ca408111356a03dd05452cf31060db7 *vignettes/overfitting.bib

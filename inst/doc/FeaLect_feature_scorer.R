@@ -10,7 +10,8 @@
 	names(L) <- rownames(F)
 	message(dim(F)[1], " samples and ",dim(F)[2], " features.")
 
-	FeaLect.result <-FeaLect(F=F,L=L,maximum.features.num=10,total.num.of.models=100,talk=TRUE)	
+	FeaLect.result <-FeaLect(F=F,L=L,maximum.features.num=10, 
+                                 total.num.of.models=100, talk=TRUE)
 
 
 ###################################################

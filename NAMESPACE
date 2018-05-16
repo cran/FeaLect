@@ -9,3 +9,7 @@ import(
   lars,
   rms
 )
+
+## Habil added:
+importFrom("graphics", "plot")
+importFrom("stats", "coef", "predict", "var")
