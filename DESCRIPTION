@@ -1,10 +1,10 @@
 Package: FeaLect
 Type: Package
 Title: Scores Features for Feature Selection
-Version: 1.12
-Date: 2018-05-16
+Version: 1.14
+Date: 2018-05-31
 Author: Habil Zare
-Maintainer: Habil Zare <zare@txstate.edu>
+Maintainer: Habil Zare <zare@u.washington.edu>
 Depends: lars, rms
 Description: For each feature, a score is computed that can be useful
         for feature selection. Several random subsets are sampled from
@@ -22,6 +22,7 @@ Description: For each feature, a score is computed that can be useful
 License: GPL (>= 2)
 LazyLoad: yes
 Repository: CRAN
-Date/Publication: 2018-05-16 20:37:36 UTC
-Packaged: 2018-05-16 20:02:01 UTC; habil
+Date/Publication: 2018-06-01 13:13:46 UTC
+Packaged: 2018-06-01 00:07:37 UTC; habil
 NeedsCompilation: no
+RoxygenNote: 6.0.1

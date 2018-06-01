@@ -2,7 +2,7 @@
 \Rdversion{1.1}
 \alias{doctor.validate}
 
-\title{	Validates a model using validaing samples.}
+\title{	Validates a model using validating samples.}
 
 \description{
 	A model fitted on the training samples, can be validated on a separate validating set. The recall, precision, and accuracy of the model are computed. 
@@ -26,7 +26,7 @@ doctor.validate(true.labels, predictions)
 	F-measure is equal to:  2 times precision times recall / (precision+recall).
 }
 \value{
-	F-measure, precision, and recall are calculated. Also, the mis-labelled cases are reported.
+	F-measure, precision, and recall are calculated. Also, the mis-labeled cases are reported.
 }
 
 

@@ -8,7 +8,7 @@
 \description{
 %%\packageDescription{FeaLect}
 Suppose you have a feature matrix with 200 features and only 20 samples and your goal is to build a classifier. 
-You can run the FeLeact() function to compute the scores for your features. Only the relatively high score 
+You can run the FeaLect() function to compute the scores for your features. Only the relatively high score 
 features (say the top 20) are recommended for further analysis. In this way, one can prevent overfitting by
 reducing the number of features significantly. 
 }

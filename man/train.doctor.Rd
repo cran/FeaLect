@@ -3,7 +3,7 @@
 \alias{train.doctor}
 
 \title{
-	Fittes various models based on a combination on penalized linear models and logistic regression.}
+	Fits various models based on a combination on penalized linear models and logistic regression.}
 	
 \description{
 	 Various linear models are fitted to the training samples using lars method. 
