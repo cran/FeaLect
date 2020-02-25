@@ -7,30 +7,31 @@ input.check.FeaLect <- function(F_, L_, maximum.features.num,gamma){
     ##		maximum.num.of.tries.for_randomly.choosing.samples (=1000 as default),
     ##		  If we try this many times and the optained lables are all the same,
     ##		  we give up (maybe the WHOLE lables are the same) with an error message.
-    ##_________________________________________________________________________________________________________________________________________
-    
+    ##__________________________________________________________________________________________
     ## Input check:
-    if(class(F_)!="matrix" | class(L_)!="numeric")
-        stop(paste("Input error! F should be a matrix, L should be a numeric vector."))
+    if(!inherits(F_, "matrix"))
+        stop(paste("Input error! F_ should be a matrix."))
+    if(!inherits(L_, "numeric"))
+        stop(paste("Input error! L_ should be a numeric vector."))
 
     if(dim(F_)[1]!=length(L_))
         stop(paste("Number of rows of F (input feature matrix) and length of L (vector of labels) should be the same."))		
     
     ## feature names:
-    if (is.null(colnames(F_))){
+    if(is.null(colnames(F_))){
         colnames(F_) <- 1:dim(F_)[2]
     }##End if.
     inds <- which(is.na(colnames(F_)))
     colnames(F_)[inds] <- paste("NA",inds,sep="")
 
     ## sample names:
-    if (is.null(rownames(F_)) | is.null(names(L_))){
+    if(is.null(rownames(F_)) | is.null(names(L_))){
         rownames(F_) <- 1:dim(F_)[1]
         names(L_) <- 1:length(L_)
     }##End if.	
     
     ## upper bound on the number of features
-    if (maximum.features.num > gamma*length(unique(rownames(F_))) ){
+    if(maximum.features.num > gamma*length(unique(rownames(F_))) ){
         maximum.features.num <- round(gamma * length(unique(rownames(F_))),0)
         warning("\nmaximum.features.num was more than gamma times the number of instances (number of distinct rows of F_). \n",
                 "It was automatically reduced to: ",maximum.features.num, 
@@ -40,7 +41,7 @@ input.check.FeaLect <- function(F_, L_, maximum.features.num,gamma){
     }##End if.
 
     ## upper bound on the number of features
-    if (prod(rownames(F_) == names(L_))==0 ){
+    if(prod(rownames(F_) == names(L_))==0 ){
         warning(" rownames(F_) != rownames(L_) !!! ",
                 "\n The names of row of the labels (L_) should be exatcly the same as row names of features matrix (F_). \n")
     }##End if.
